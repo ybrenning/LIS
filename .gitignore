@@ -1,0 +1,7 @@
+**/venv/
+**/__pycache__
+**/.ipynb_checkpoints
+
+gutenberg_dumas.train.3tuples
+gutenberg_dumas.train.3tuples_full_seq
+gutenberg_dumas.dev.3tuples_full_seq
