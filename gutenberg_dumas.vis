@@ -1,0 +1,163 @@
+Acté	VERB	shift	5
+est	AUX	shift	5
+une	DET	shift	5
+jeune	ADJ	shift	5
+Corinthienne	NOUN	left-arc left-arc left-arc left-arc right-arc	0
+qui	PRON	shift	7
+devient	VERB	left-arc right-arc	5
+la	DET	shift	9
+maîtresse	NOUN	left-arc right-arc	7
+de	ADP	shift	12
+l'	DET	shift	12
+empereur	NOUN	left-arc left-arc right-arc	9
+Néron	PROPN	right-arc	12
+.	PUNCT	reduce reduce reduce reduce reduce right-arc reduce	0
+
+Le	DET	shift	3
+second	ADJ	shift	3
+paraissait	NOUN	left-arc left-arc shift	0
+plus	ADV	shift	5
+jeune	ADJ	left-arc right-arc	3
+de	ADP	shift	8
+dix	NUM	shift	8
+années	NOUN	left-arc left-arc reduce right-arc	3
+à	ADP	shift	10
+peu	ADV	left-arc right-arc	8
+près	ADV	reduce reduce right-arc	3
+.	PUNCT	reduce right-arc reduce	3
+
+--	PUNCT	shift	4
+Qu'	PRON	shift	4
+y	PRON	shift	4
+a	VERB	left-arc left-arc left-arc right-arc	0
+-t	NOUN	left-arc	0
+-il	PRON	right-arc	5
+maître	ADJ	left-arc	0
+?	PUNCT	reduce	0
+dit	VERB	reduce	0
+-il	PRON	right-arc	9
+d'	ADP	shift	13
+une	DET	shift	13
+voix	NOUN	left-arc left-arc left-arc	0
+douce	ADJ	right-arc	13
+et	CCONJ	shift	16
+craintive	ADJ	left-arc reduce right-arc	13
+.	PUNCT	reduce reduce reduce	0
+
+Comment	ADV	shift	3
+t'	PRON	shift	3
+appelles	VERB	left-arc left-arc right-arc	0
+-tu	ADV	right-arc	3
+,	PUNCT	shift	6
+prophétesse	VERB	left-arc reduce right-arc	3
+de	ADP	shift	8
+bonheur	NOUN	left-arc right-arc	6
+?	PUNCT	reduce reduce right-arc reduce	3
+
+--	PUNCT	shift	6
+Et	CCONJ	shift	6
+sans	ADP	shift	6
+doute	NOUN	right-arc	3
+tu	PRON	shift	6
+as	VERB	left-arc reduce left-arc left-arc left-arc right-arc	0
+quelque	DET	shift	8
+parent	NOUN	left-arc right-arc	6
+dans	ADP	shift	11
+la	DET	shift	11
+ville	NOUN	left-arc left-arc reduce right-arc	6
+?	PUNCT	reduce reduce right-arc reduce	0
+
+Ils	PRON	shift	3
+me	PRON	shift	3
+paraissent	VERB	left-arc left-arc right-arc	0
+de	ADP	shift	8
+le	DET	shift	8
+plus	ADV	shift	8
+beau	ADJ	shift	8
+temps	NOUN	left-arc left-arc left-arc left-arc right-arc	3
+de	ADP	shift	11
+la	DET	shift	11
+Grèce	PROPN	left-arc left-arc right-arc	8
+.	PUNCT	reduce reduce reduce right-arc reduce	0
+
+Quant	ADP	shift	10
+à	ADP	right-arc	1
+les	DET	shift	4
+bas	NOUN	left-arc shift	5
+reliefs	NOUN	left-arc left-arc	10
+,	PUNCT	right-arc	5
+ils	PRON	shift	10
+sont	AUX	shift	10
+de	ADP	shift	10
+Lysippe	PROPN	left-arc left-arc left-arc reduce left-arc reduce left-arc right-arc	0
+,	PUNCT	shift	12
+élève	NOUN	left-arc right-arc	10
+de	ADP	shift	14
+Phidias	PROPN	left-arc right-arc	12
+.	PUNCT	reduce reduce reduce right-arc reduce	0
+
+Oh	PROPN	shift	7
+!	PUNCT	right-arc	1
+le	DET	shift	4
+sculpteur	NOUN	left-arc shift	7
+était	AUX	shift	7
+un	DET	shift	7
+habile	NOUN	left-arc left-arc left-arc reduce left-arc right-arc	0
+homme	NOUN	right-arc	7
+,	PUNCT	shift	12
+et	CCONJ	shift	12
+qui	PRON	shift	12
+savait	VERB	left-arc left-arc left-arc right-arc	8
+son	DET	shift	14
+métier	NOUN	left-arc right-arc	12
+.	PUNCT	reduce reduce reduce reduce right-arc reduce	0
+
+Je	PRON	shift	5
+n'	ADV	shift	5
+ai	AUX	shift	5
+jamais	ADV	shift	5
+vu	VERB	left-arc left-arc left-arc left-arc right-arc	0
+d'	DET	shift	7
+homme	NOUN	left-arc right-arc	5
+vivant	VERB	right-arc	7
+mourir	VERB	reduce right-arc	7
+avec	ADP	shift	11
+plus	ADV	left-arc right-arc	9
+de	ADP	shift	13
+douleur	NOUN	left-arc right-arc	11
+.	PUNCT	reduce reduce reduce reduce reduce right-arc reduce	0
+
+Sporus	PROPN	shift	2
+serra	PROPN	left-arc right-arc	0
+la	DET	shift	4
+main	NOUN	left-arc right-arc	2
+de	ADP	shift	7
+son	DET	shift	7
+maître	NOUN	left-arc left-arc right-arc	4
+.	PUNCT	reduce reduce reduce right-arc reduce	0
+
+--	PUNCT	shift	5
+Je	PRON	shift	5
+me	PRON	shift	5
+suis	AUX	shift	5
+embarqué	VERB	left-arc left-arc left-arc left-arc right-arc	0
+à	ADP	shift	8
+le	DET	shift	8
+port	NOUN	left-arc left-arc right-arc	5
+d'	ADP	shift	10
+Ostie	PROPN	left-arc right-arc	8
+.	PUNCT	reduce reduce reduce right-arc reduce	0
+
+L'	DET	shift	2
+esclave	NOUN	left-arc shift	3
+répondit	VERB	left-arc right-arc	0
+qu'	SCONJ	shift	7
+il	PRON	shift	7
+l'	PRON	shift	7
+ignorait	VERB	left-arc left-arc left-arc right-arc	3
+;	PUNCT	reduce right-arc	3
+le	DET	shift	10
+licteur	NOUN	left-arc shift	12
+fut	AUX	shift	12
+introduit	VERB	left-arc left-arc reduce right-arc	3
+.	PUNCT	reduce right-arc reduce	3
