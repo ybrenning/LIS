@@ -1,10 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.decomposition import PCA
 from sentence_transformers import SentenceTransformer
 
 
-def show_label_dist():
+def show_label_dist(label):
     with open("gutenberg_dumas.train.3tuples", "r") as f:
         d = {}
         for line in f.readlines():
@@ -12,21 +11,27 @@ def show_label_dist():
             if len(cols) <= 1:
                 continue
 
-            label = cols[1]
+            l = cols[1]
             act = cols[2]
-            if label == "NOUN":
+            if l == label:
                 if act in d.keys():
                     d[act] += 1
                 else:
                     d[act] = 1
 
-    import matplotlib.pyplot as plt
     sorted_items = sorted(d.items(), key=lambda x: x[1], reverse=True)
 
     labels, values = zip(*sorted_items)
     plt.bar(labels, values)
+
+    plt.title(f"Distribution of action lists for {label}")
+    plt.xlabel("Action list")
+    plt.ylabel("No. of occurrences")
+
     plt.xticks(fontsize=5, rotation=45)
+    plt.xticks([])
     plt.yscale('log')
+
     plt.show()
 
 
@@ -90,46 +95,67 @@ def vector_approach():
         plt.scatter(X_reduced[:, 0], X_reduced[:, 1], c=[colors[label] for label in y], label=y, marker=".", alpha=.1)
         handles = [plt.Line2D([0], [0], marker='o', color='w', markerfacecolor=colors[label], markersize=8, label=label)
                    for label in unique_labels]
-        plt.legend(handles=handles, title="Categories")
+        plt.legend(handles=handles)
 
         plt.show()
 
 
-def embedding_approach():
+def normalize_order(acts):
+    tokens = acts.split(" ")
+    return " ".join(sorted(tokens))
+    
+def embedding_approach(reduction, n_sentences, order=False):
     with open("gutenberg_dumas.dev.3tuples_full_seq", "r") as f:
 
         model = SentenceTransformer("all-MiniLM-L6-v2")
 
         embeddings = []
         labels = []
-        for line in f.readlines()[:2000]:
+        i = 0
+        for line in f.readlines():
             cols = line.strip().split("\t")
             if len(cols) <= 1:
+                i += 1
+                if i == n_sentences:
+                    break
                 continue
 
             label = cols[1]
             acts = cols[2]
+            if not order:
+                acts = normalize_order(acts)
 
-            if label == "DET" or label == "ADJ" or label == "PUNCT":
-                emb = model.encode(acts)
-                embeddings.append(emb)
-                labels.append(label)
+            emb = model.encode(acts)
+            embeddings.append(emb)
+            labels.append(label)
 
         X = np.array(embeddings)
         y = np.array(labels)
 
-        pca = PCA(n_components=2)
-        X_reduced = pca.fit_transform(X)
+        if reduction == "pca":
+            from sklearn.decomposition import PCA
+            pca = PCA(n_components=2)
+            X_reduced = pca.fit_transform(X)
+        elif reduction == "tsne":
+            from sklearn.manifold import TSNE
+            tsne = TSNE(n_components=2)
+            X_reduced = tsne.fit_transform(X)
+        else:
+            raise ValueError("Invalid dimensionality reduction technique")
 
         unique_labels = list(set(y))
         color_map = plt.get_cmap("tab10")
         colors = {label: color_map(i) for i, label in enumerate(unique_labels)}
+
         plt.scatter(X_reduced[:, 0], X_reduced[:, 1], c=[colors[label] for label in y], label=y, marker=".", alpha=.1)
         handles = [plt.Line2D([0], [0], marker='o', color='w', markerfacecolor=colors[label], markersize=8, label=label)
                    for label in unique_labels]
-        plt.legend(handles=handles, title="Categories")
+        plt.legend(handles=handles)
 
+        plt.title(f"Dimensionality reduction of action list embeddings using {reduction}")
         plt.show()
+
+        return X, X_reduced
 
         # classes = np.unique(y)
         # num_classes = len(classes)
@@ -153,4 +179,4 @@ def embedding_approach():
         # plt.show()
 
 
-vector_approach()
+#vector_approach()
